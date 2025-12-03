@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "Podcax",
+    "slug": "podcast_app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/podcax-logo.png",
+    "splash": {
+      "image": "./assets/images/podcax-splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#d9d9d9"
+    },
+    "scheme": "podcax",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.podcast_app"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/podcax-splash.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#d9d9d9",
+          "dark": {
+            "backgroundColor": "#000000"
+          }
+        }
+      ],
+      "expo-font",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

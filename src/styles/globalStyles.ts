@@ -1,0 +1,717 @@
+import { Dimensions, StyleSheet } from 'react-native';
+import colors from './colors';
+import fonts from './fonts';
+import metrics from './metrics';
+
+const { width } = Dimensions.get('window');
+const gridItemWidth = (width - (metrics.paddingLarge * 2) - (metrics.marginSmall)) / 2;
+
+const globalStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.background,
+    paddingHorizontal: metrics.paddingLarge,
+  },
+  centered: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    fontFamily: fonts.playfairBold,
+    fontSize: 22,
+    color: colors.textPrimary,
+  },
+  subtitle: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 13,
+    color: colors.textSecondary,
+  },
+  buttonText: {
+    fontFamily: fonts.poppinsSemiBold,
+    fontSize: 15,
+    color: colors.white,
+  },
+  input: {
+    backgroundColor: colors.white,
+    borderRadius: metrics.radiusSmall,
+    borderWidth: 1,
+    borderColor: colors.border,
+    padding: metrics.paddingMedium,
+    marginBottom: metrics.marginMedium,
+    fontFamily: fonts.poppinsRegular,
+    color: colors.textPrimary,
+    width: '100%',
+  },
+  logo: {
+    width: 150,
+    height: 150,
+    marginRight: metrics.marginMedium,
+  },
+  topSection: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: metrics.marginLarge,
+  },
+  topSectionText: {
+    flexDirection: 'column',
+    marginTop: metrics.marginSmall,
+    flex: 1,
+  },
+  form: {
+    width: '100%',
+  },
+  actionButton: {
+    backgroundColor: colors.primary,
+    borderRadius: metrics.radiusMedium,
+    paddingVertical: metrics.paddingMedium,
+    alignItems: 'center',
+    marginTop: metrics.marginSmall,
+  },
+  bottomLinks: {
+    marginTop: metrics.marginMedium,
+    alignItems: 'center',
+    gap: 6,
+  },
+  linkText: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 13,
+    backgroundColor: colors.border,
+    padding: metrics.paddingSmall,
+    borderRadius: metrics.radiusSmall,
+    color: colors.textSecondary,
+  },
+  accountTypeContainer: {
+    flexDirection: 'row',
+    gap: 12,
+  },
+  accountButton: {
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: metrics.radiusSmall,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  activeAccountButton: {
+    backgroundColor: colors.primary,
+  },
+  accountText: {
+    fontFamily: fonts.poppinsMedium,
+    color: colors.textSecondary,
+  },
+  activeAccountText: {
+    color: colors.white,
+  },
+  contentText: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 13,
+    color: colors.textMuted,
+  },
+  snackbarStyle: {
+    position: 'absolute',
+    alignSelf: 'center',
+    top: 0,
+    width: '90%',
+    borderRadius: metrics.radiusMedium,
+    paddingVertical: metrics.paddingSmall,
+    paddingHorizontal: metrics.paddingMedium,
+    zIndex: 9999,
+    shadowColor: colors.black,
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 5,
+    fontFamily: fonts.poppinsSemiBold,
+    fontSize: 14,
+    color: colors.white,
+    textAlign: 'center',
+  },
+  snacbarTextStyle: {
+    color: colors.white,
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 14,
+    textAlign: 'center'
+  },
+  bottomNavbarContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: colors.white,
+    borderWidth: 2,
+    borderColor: colors.border,
+    borderRadius: metrics.radiusMedium,
+    marginHorizontal: metrics.paddingLarge,
+    marginTop: metrics.marginMedium,
+    marginBottom: metrics.marginLarge,
+    paddingVertical: metrics.paddingSmall,
+    paddingHorizontal: metrics.paddingMedium,
+  },
+  tabButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  tabLabel: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 12,
+    marginTop: 2,
+  },
+  navDivider: {
+    width: 2,
+    height: 28,
+    backgroundColor: colors.border,
+    marginHorizontal: 8,
+  },
+  header: {
+    alignItems: 'center',
+    marginBottom: 20,
+    marginTop: 20,
+    borderBottomWidth: 4,
+    borderRadius: metrics.radiusSmall,
+    borderColor: colors.border
+  },
+  headerIcon: {
+    width: 120,
+    height: 100,
+    resizeMode: 'contain'
+  },
+  editTitle: {
+    backgroundColor: colors.wheat,
+    borderRadius: metrics.radiusMedium,
+    paddingHorizontal: metrics.paddingMedium,
+    paddingVertical: metrics.paddingLarge,
+    fontFamily: fonts.playfairBold,
+    fontSize: 20,
+    color: colors.primary,
+    marginLeft: 10,
+    alignSelf: 'flex-start'
+  },
+  editActionButton: {
+    flex: 1,
+    backgroundColor: colors.wheat,
+    paddingVertical: 14,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 4,
+    minHeight: 50
+  },
+  editButtonText: {
+    fontWeight: '600',
+    fontSize: 14,
+    textAlign: 'center'
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 12,
+    flexWrap: 'wrap'
+  },
+  coverImage: {
+    width: '100%',
+    height: 200,
+    borderRadius: 12,
+    marginTop: 12
+  },
+  descriptionInput: {
+    width: '100%',
+    backgroundColor: '#f2f2f2',
+    padding: 12, borderRadius: 12,
+    marginTop: 12,
+    minHeight: 80,
+  },
+  coverButton: {
+    backgroundColor: colors.wheat,
+    paddingVertical: 14,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  card: {
+    backgroundColor: '#fff',
+    padding: 12,
+    borderRadius: 12,
+    marginBottom: 12
+  },
+  cardActions: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 8
+  },
+  icon: {
+    tintColor: colors.primary,
+    width: 28,
+    height: 28
+  },
+  profileInfoContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: metrics.marginLarge,
+    paddingHorizontal: metrics.paddingMedium,
+  },
+  userInfo: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+  },
+  username: {
+    fontFamily: fonts.poppinsSemiBold,
+    fontSize: 18,
+    color: colors.textPrimary,
+    marginRight: metrics.marginSmall,
+  },
+  accountType: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 14,
+    color: colors.textSecondary,
+    textTransform: 'capitalize',
+  },
+  signOutButton: {
+    backgroundColor: colors.error,
+    paddingVertical: metrics.paddingSmall,
+    paddingHorizontal: metrics.paddingMedium,
+    borderRadius: metrics.radiusSmall,
+  },
+  signOutButtonText: {
+    fontFamily: fonts.poppinsSemiBold,
+    color: colors.white,
+    fontSize: 14,
+  },
+  categoriesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    borderBottomWidth: 1,
+    borderColor: colors.border,
+    marginBottom: metrics.marginMedium,
+  },
+  categoryButton: {
+    paddingVertical: metrics.paddingMedium,
+    paddingHorizontal: metrics.paddingSmall,
+  },
+  activeCategoryButton: {
+    borderBottomWidth: 3,
+    borderColor: colors.primary,
+  },
+  categoryText: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 15,
+    color: colors.textSecondary,
+    textTransform: 'capitalize',
+  },
+  activeCategoryText: {
+    fontFamily: fonts.poppinsSemiBold,
+    color: colors.primary,
+  },
+  emptyContentContainer: {
+    flex: 1,
+    minHeight: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  emptyContentText: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 16,
+    color: colors.textMuted,
+  },
+  searchBarContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.white,
+    borderRadius: metrics.radiusSmall,
+    paddingHorizontal: metrics.paddingMedium,
+    paddingVertical: metrics.paddingSmall,
+    borderWidth: 1,
+    borderColor: colors.border,
+    marginBottom: metrics.marginMedium,
+  },
+  searchIcon: {
+    width: metrics.iconSizeSmall,
+    height: metrics.iconSizeSmall,
+    marginRight: metrics.marginSmall,
+    tintColor: colors.textMuted,
+  },
+  searchInput: {
+    flex: 1,
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 15,
+    color: colors.textPrimary,
+    paddingVertical: 0,
+  },
+  searchCard: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: colors.white,
+    padding: metrics.paddingMedium,
+    borderRadius: metrics.radiusSmall,
+    marginBottom: metrics.marginSmall,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  searchCardInfo: {
+    flex: 1,
+  },
+  searchCardUsername: {
+    fontFamily: fonts.poppinsSemiBold,
+    fontSize: 16,
+    color: colors.textPrimary,
+  },
+  searchCardAccountType: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 13,
+    color: colors.textSecondary,
+    textTransform: 'capitalize',
+    marginTop: 2,
+  },
+  searchCardEmail: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 13,
+    color: colors.textMuted,
+    marginTop: 2,
+  },
+  searchArrowIcon: {
+    width: metrics.iconSizeSmall,
+    height: metrics.iconSizeSmall,
+    tintColor: colors.textMuted,
+  },
+  emptyResultsContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50,
+  },
+  emptyResultsText: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 16,
+    color: colors.textMuted,
+  },
+  postContainer: {
+    backgroundColor: colors.white,
+    borderRadius: metrics.radiusMedium,
+    padding: metrics.paddingMedium,
+    marginBottom: metrics.marginMedium,
+    borderWidth: 2,
+    borderColor: colors.border,
+  },
+  postHeaderContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: metrics.marginSmall,
+  },
+  postUsername: {
+    fontFamily: fonts.poppinsSemiBold,
+    fontSize: 16,
+    color: colors.textPrimary,
+  },
+  postAccountType: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 13,
+    color: colors.textSecondary,
+    marginLeft: metrics.marginSmall / 2,
+  },
+  postDescription: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 14,
+    color: colors.textPrimary,
+    marginBottom: metrics.marginSmall,
+  },
+  postImageContainer: {
+    position: 'relative',
+    marginBottom: metrics.marginSmall,
+  },
+  postImage: {
+    width: '100%',
+    height: 220,
+    borderRadius: metrics.radiusSmall,
+    backgroundColor: colors.border,
+  },
+  playButtonOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    borderRadius: metrics.radiusSmall,
+  },
+  playButtonIcon: {
+    width: metrics.iconSizeLarge,
+    height: metrics.iconSizeLarge,
+    tintColor: colors.white,
+  },
+  postActionsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: metrics.marginSmall,
+  },
+  postActionsLeftGroup: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: metrics.marginMedium,
+  },
+  postActionButton: {
+  },
+  postActionIcon: {
+    width: metrics.iconSizeMedium,
+    height: metrics.iconSizeMedium,
+    tintColor: colors.textSecondary,
+  },
+  savedUserInfoContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: metrics.marginMedium,
+  },
+  savedUsername: {
+    fontFamily: fonts.poppinsSemiBold,
+    fontSize: 18,
+    color: colors.textPrimary,
+    marginRight: metrics.marginSmall,
+  },
+  savedAccountType: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 14,
+    color: colors.textSecondary,
+    textTransform: 'capitalize',
+  },
+  savedGridContainer: {
+    flex: 1,
+  },
+  savedGridItem: {
+    width: gridItemWidth,
+    height: gridItemWidth,
+    borderRadius: metrics.radiusSmall,
+    overflow: 'hidden',
+    marginBottom: metrics.marginSmall,
+  },
+  savedGridImage: {
+    width: '100%',
+    height: '100%',
+  },
+  savedGridOverlay: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    padding: metrics.paddingSmall,
+    backgroundColor: 'rgba(0,0,0,0.4)',
+  },
+  savedGridUsername: {
+    fontFamily: fonts.poppinsSemiBold,
+    color: colors.white,
+    fontSize: 12,
+  },
+  modalOverlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  },
+  modalContentContainer: {
+    width: '95%',
+    maxHeight: '80%',
+    backgroundColor: colors.background,
+    borderRadius: metrics.radiusMedium,
+    padding: metrics.paddingSmall,
+  },
+  closeModalButton: {
+    backgroundColor: colors.primary,
+    paddingVertical: metrics.paddingSmall,
+    borderRadius: metrics.radiusSmall,
+    alignItems: 'center',
+    marginTop: metrics.marginSmall,
+  },
+  closeModalButtonText: {
+    color: colors.white,
+    fontFamily: fonts.poppinsSemiBold,
+    fontSize: 15,
+  },
+  shareButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.wheat,
+    paddingVertical: metrics.paddingSmall,
+    paddingHorizontal: metrics.paddingMedium,
+    borderRadius: metrics.radiusLarge,
+    marginLeft: 'auto',
+    elevation: 2,
+  },
+  shareButtonText: {
+    color: colors.primary,
+    fontFamily: fonts.poppinsSemiBold,
+    marginTop: metrics.marginSmall / 2
+  },
+  audioPreviewCard: {
+    backgroundColor: colors.white,
+    borderRadius: metrics.radiusSmall,
+    padding: metrics.paddingMedium,
+    marginTop: metrics.marginMedium,
+    borderWidth: 1,
+    borderColor: colors.border,
+    justifyContent: 'space-between',
+  },
+  audioPreviewName: {
+    fontFamily: fonts.poppinsMedium,
+    fontSize: 14,
+    color: colors.textPrimary,
+    flex: 1,
+    marginRight: metrics.marginSmall,
+  },
+  editorModalContainer: {
+    width: '90%',
+    backgroundColor: colors.white,
+    borderRadius: metrics.radiusMedium,
+    padding: metrics.paddingLarge,
+    alignItems: 'stretch',
+    shadowColor: colors.black,
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  editorModalTitle: {
+    fontFamily: fonts.playfairBold,
+    fontSize: 22,
+    color: colors.textPrimary,
+    textAlign: 'center',
+    marginBottom: metrics.marginLarge,
+  },
+  editorLabel: {
+    fontFamily: fonts.poppinsSemiBold,
+    fontSize: 16,
+    color: colors.textSecondary,
+    marginBottom: metrics.marginSmall,
+    marginTop: metrics.marginSmall,
+  },
+  editorSlider: {
+    width: '100%',
+    height: 40,
+    marginBottom: metrics.marginMedium,
+  },
+  editorButtonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: metrics.marginMedium,
+  },
+  editorButton: {
+    flex: 1,
+    paddingVertical: metrics.paddingMedium,
+    borderRadius: metrics.radiusSmall,
+    alignItems: 'center',
+    marginHorizontal: metrics.marginSmall / 2,
+  },
+  editorButtonPrimary: {
+    backgroundColor: colors.primary,
+  },
+  editorButtonTextPrimary: {
+    color: colors.white,
+    fontFamily: fonts.poppinsSemiBold,
+    fontSize: 15,
+  },
+  editorButtonSecondary: {
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  editorButtonTextSecondary: {
+    color: colors.textSecondary,
+    fontFamily: fonts.poppinsSemiBold,
+    fontSize: 15,
+  },
+  audioPreviewHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: metrics.marginSmall,
+  },
+  playerBarContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: metrics.marginSmall,
+  },
+  playerSlider: {
+    flex: 1,
+    height: 40,
+    marginHorizontal: metrics.marginSmall,
+  },
+  playerTimeText: {
+    fontFamily: fonts.poppinsRegular,
+    fontSize: 12,
+    color: colors.textMuted,
+    width: 40,
+    textAlign: 'center',
+  },
+  audioPreviewActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: metrics.marginMedium,
+  },
+  playerPlayButton: {
+    marginRight: metrics.marginSmall,
+  },
+  editorPlayButtonContainer: {
+    alignItems: 'center',
+    marginBottom: metrics.marginMedium,
+  },
+  editorPlayIcon: {
+    width: metrics.iconSizeLarge,
+    height: metrics.iconSizeLarge,
+    tintColor: colors.primary,
+  },
+  userProfileHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 15,
+    marginBottom: metrics.marginSmall,
+  },
+  backButton: {
+    backgroundColor: colors.wheat,
+    paddingVertical: metrics.paddingSmall,
+    paddingHorizontal: metrics.paddingMedium,
+    borderRadius: metrics.radiusLarge,
+    elevation: 3,
+  },
+  backButtonText: {
+    color: colors.black,
+    fontFamily: fonts.poppinsBold,
+    fontSize: 13,
+    marginTop: 4,
+    marginRight: 5
+  },
+  backButtonIcon: {
+    width: metrics.iconSizeSmall,
+    height: metrics.iconSizeSmall,
+    tintColor: colors.black,
+  },
+  userProfileHeaderText: {
+    fontSize: 18,
+    fontFamily: fonts.poppinsSemiBold,
+    color: colors.textPrimary,
+  },
+  centeredShareButton: {
+    backgroundColor: colors.primary,
+    borderRadius: metrics.radiusMedium,
+    paddingVertical: metrics.paddingMedium,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: metrics.marginLarge,
+    marginBottom: metrics.marginLarge,
+    flexDirection: 'row',
+    gap: 10,
+    elevation: 3,
+    marginHorizontal: metrics.marginLarge,
+  },
+  centeredShareButtonText: {
+    color: colors.white,
+    fontFamily: fonts.poppinsSemiBold,
+    fontSize: 16,
+  },
+  centeredShareButtonIcon: {
+    width: metrics.iconSizeSmall,
+    height: metrics.iconSizeSmall,
+    tintColor: colors.white,
+  },
+})
+
+export default globalStyles

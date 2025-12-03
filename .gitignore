@@ -1,0 +1,119 @@
+# Dependencies
+
+node_modules/
+
+
+
+# Expo & Build
+
+.expo/
+
+dist/
+
+web-build/
+
+expo-env.d.ts
+
+
+
+# Native Credentials & Keys
+
+.kotlin/
+
+*.orig.*
+
+*.jks
+
+*.p8
+
+*.p12
+
+*.key
+
+*.mobileprovision
+
+
+
+# Metro Bundler
+
+.metro-health-check*
+
+
+
+# Logs & Debug
+
+npm-debug.*
+
+yarn-debug.*
+
+yarn-error.*
+
+*.log
+
+
+
+# OS System Files
+
+.DS_Store
+
+*.pem
+
+Thumbs.db
+
+Desktop.ini
+
+
+
+# Environment Variables (Secrets)
+
+.env
+
+.env.local
+
+.env.development.local
+
+.env.test.local
+
+.env.production.local
+
+*.env*
+
+
+
+# TypeScript
+
+*.tsbuildinfo
+
+
+
+# IDE / Editor
+
+.idea/
+
+.vscode/
+
+*.swp
+
+*.swo
+
+
+
+# Firebase Config
+
+google-services.json
+
+GoogleService-Info.plist
+
+
+
+# Unused / Examples
+
+app-example/
+
+
+
+# Native Folders (Prebuild)
+
+/ios
+
+/android
